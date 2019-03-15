@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>线条粗细</title>
+</head>
+<body>
+<canvas height="500" width="500"></canvas>
+
+<script>
+    const cv = document.querySelector("canvas");
+    const c = cv.getContext("2d");
+    // 直接写数字
+    c.lineWidth = 4;
+    // 画线宽的时候 把线宽分一边
+    // 线的左面
+    c.rect(50, 50, 50, 50);
+    c.arc(250, 250, 100, 0, 2 * Math.PI);
+
+    c.moveTo(50, 50);
+    c.lineTo(200, 50);
+
+    c.stroke();
+</script>
+
+</body>
+</html>

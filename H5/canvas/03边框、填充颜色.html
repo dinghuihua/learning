@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框颜色strokeStyle/填充颜色fillStyle</title>
+</head>
+<body>
+<canvas height="500" width="500"></canvas>
+
+<script>
+    const cv = document.querySelector("canvas");
+    const c = cv.getContext('2d');
+
+    // 1. 可以写单词
+    c.fillStyle = "green";
+    c.strokeStyle = "skyblue";
+    // 2. 可以写 #16进制
+    c.fillStyle = "#963";
+    c.strokeStyle = "#69f";
+    // 3. rgb
+    c.fillStyle = "rgb(72,255,247)";
+    c.strokeStyle = "rgb(255,68,177)";
+    // 4. rgba
+    c.fillStyle = "rgba(200, 150, 200, .5)";
+    c.strokeStyle = "rgba(100, 150, 200, .5)";
+    // 5. hsl
+    c.fillStyle = "hsl(150, 40%, 30%)";
+    c.strokeStyle = "hsl(80, 90%, 50%)";
+
+
+    c.rect(0,0,100,200);
+    c.fill();
+    c.stroke()
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边界样式lineJoin&端点样式</title>
+</head>
+<body>
+<canvas width="500" height="500"></canvas>
+
+<script>
+    const cv = document.querySelector('canvas')
+    const c = cv.getContext('2d')
+
+    c.lineWidth = 20;
+    // 1. round 圆角
+    // 2. bevel 平角
+    // 3. miter 默认值
+    c.lineJoin = 'bevel';
+
+    c.moveTo(100, 100);
+    c.lineTo(300, 300);
+    c.lineTo(200, 300);
+
+    c.stroke()
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas入门: 绘制直线、矩形、圆形</title>
+</head>
+<body>
+<canvas width="500" height="500"></canvas>
+
+<script>
+    // 获取canvas元素
+    const cv = document.querySelector("canvas");
+    // 新建图层 *canvas只有2d
+    const c = cv.getContext('2d');
+
+    // 1. 直线
+    c.moveTo(50,50);  // 开始坐标(x,y)
+    c.lineTo(100,100);  // 结束坐标(x,y)
+    c.stroke();
+
+    // 2. 矩形 [start x, start y, width, height]
+    c.rect(100,100,50,80);
+    c.stroke();   // 以[线]的方式绘制图形
+    c.beginPath();  // ---------*样式优先级的问题,  此处需要重置样式, 不然上面的也会被下面的影响, 导致也以填充的方式绘制
+    c.rect(120,120,50,80);
+    c.fill();   //以[填充]的方式绘制图形
+
+    // 矩形 - 使用复合属性
+    c.fillRect(200,200,100,50);
+    c.strokeRect(250,250,100,50);
+
+    c.beginPath();
+
+    // 3. 圆形 [圆心x, 圆心y, 半径, 开始弧度, 结束弧度, 是否逆时针(默认false为顺时针, true为逆时针)]
+    // *弧度计算: 圆的周长为2π  360°=2π  可得 1°=1°*π/180
+    c.arc(350, 350, 40, 0, 360*Math.PI/180);
+    c.fill();
+    c.beginPath();
+    c.arc(450, 450, 40, 0, 90*Math.PI/180, true);
+    c.stroke()
+
+
+</script>
+</body>
+</html>

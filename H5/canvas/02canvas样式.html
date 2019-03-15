@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /* 如果在style里面去设置宽高
+         会把canvas进行缩放
+         */
+        /*canvas{
+          width: 500px; !*1.6*!
+          height: 500px; !*3.3*!
+        }*/
+    </style>
+</head>
+<body>
+<!--
+1. 设置canvas的宽和高
+(1) canvas标签里
+(2) css (不推荐, 会把canvas进行缩放)
+(3) js (灵活)
+
+-->
+
+<!--<canvas width="500" height="500"></canvas>-->
+<canvas></canvas>
+<script>
+
+    const cv = document.querySelector("canvas");
+    // 宽高
+    cv.height = window.innerHeight;
+    cv.width = window.innerWidth;
+    const c = cv.getContext("2d");
+    // 图形 复合属性 驼峰
+    c.fillRect(100, 0, 150, 100);
+</script>
+</body>
+</html>
