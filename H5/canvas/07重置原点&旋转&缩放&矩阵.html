@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重置原点&旋转&缩放&变形矩阵</title>
+</head>
+<body>
+
+<canvas width="500" height="500"></canvas>
+
+<script>
+    const cv = document.querySelector('canvas')
+    const c = cv.getContext('2d')
+
+
+    c.rect(250, 250, 100, 100)
+    c.fill()
+    c.beginPath()
+    /**
+     * 1. translate(x,y) : 重新定义canvas的(0,0)点
+     */
+    c.translate(250, 250)
+    /**
+     * 2. rotate(angle) :
+     *      旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。
+     *      旋转的中心是坐标原点。
+     */
+    c.fillStyle = '#00ff00'
+    c.rotate(60*Math.PI/180)
+    c.rect(0, 0, 100, 100)
+    c.fill()
+    /**
+     * 3. scale(x, y) : 增减图形在 canvas 中的像素数目，对形状，位图进行缩小或者放大。
+     *      x,y 分别是横轴和纵轴的缩放因子，它们都必须是正值, 值比 1.0 小表示缩 小，比 1.0 大则表示放大
+     */
+
+    c.beginPath()
+    c.fillStyle = '#cc9e4f'
+    c.scale(1,1)
+    c.arc(200, 200, 30, 0, 360*Math.PI/180);
+    c.fill()
+
+    c.beginPath()
+
+    c.fillStyle = '#cc00cc'
+    c.scale(2,2)
+    c.arc(300, 300, 30, 0, 360*Math.PI/180);
+    c.fill()
+
+    /**
+     * 4. transform(a, b, c, d, e, f)
+     *       a (m11): Horizontal scaling.
+             b (m12): Horizontal skewing.
+             c (m21):​ Vertical skewing.
+             d (m22):​ Vertical scaling.
+             e (dx):​ Horizontal moving.
+             f (dy):​ Vertical moving.
+     */
+
+    c.beginPath()
+    c.fillStyle = '#3fccb0'
+    c.fillRect(300, 0, 50, 50);
+
+    // c.beginPath()
+    // c.fillStyle = '#2c1fcc'
+    // c.transform(1, 1, 0, 1, 0, 0);
+    // c.fillRect(100, 100, 50, 50);
+</script>
+</body>
+</html>

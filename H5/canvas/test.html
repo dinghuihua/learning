@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas width="1000" height="1000"></canvas>
+<script>
+    const cv = document.querySelector('canvas')
+    const c = cv.getContext('2d')
+
+    c.beginPath()
+    c.fillStyle = '#cc9e4f'
+
+    c.arc(200, 200, 30, 0, 360*Math.PI/180);
+    c.fill()
+
+    c.beginPath()
+
+    c.fillStyle = '#cc00cc'
+    c.scale(2,2)
+    c.arc(300, 300, 30, 0, 360*Math.PI/180);
+    c.fill()
+
+
+</script>
+</body>
+</html>
